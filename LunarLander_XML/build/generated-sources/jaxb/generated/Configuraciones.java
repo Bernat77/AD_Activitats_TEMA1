@@ -112,7 +112,7 @@ public class Configuraciones {
      * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
-    @XmlType(name = "", propOrder = {
+    @XmlType(name = "config", propOrder = {
         "name",
         "dif",
         "nav"

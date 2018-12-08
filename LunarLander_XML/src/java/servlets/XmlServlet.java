@@ -29,7 +29,7 @@ public class XmlServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        System.out.println("se ha llegado al servlet");
+     
 
         //Crear objeto File (ponerlo en f)
         ServletContext context = getServletContext();

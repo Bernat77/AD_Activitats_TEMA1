@@ -276,7 +276,7 @@ window.onload = function () {
         var id1 = $("#out option:selected").attr("id") - 1;
         dif = xml[id1][0];
         setDificultad();
-        nave = (int)(xml[id1][1]);
+        nave = parseInt(xml[id1][1]);
         alert("Configuración cargada")
         restart();
     }

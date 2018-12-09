@@ -274,7 +274,7 @@ window.onload = function () {
         var id1 = $("#out option:selected").attr("id") - 1;
         dif = xml[id1][0];
         setDificultad();
-        nave = (int)(xml[id1][1]);
+        nave = parseInt(xml[id1][1]);
         alert("Configuración cargada")
         restart();
     }
@@ -450,22 +450,18 @@ function loadXml() {
 
     $.ajax({
         type: "POST",
-        url: url, //canviar al Servlet després de comprovar que funciona.
+        url: url, 
         dataType: "xml",
         success: function (dataXml) {
             alert("Csv cargado y convertido a XML");
             $("#out").empty();
             xml = [];
             var length = $(dataXml).find('config').length;
-
             xml.length = length;
-
             var k = 0;
-
             for (k = 0; k < length; k++) {
                 xml[k] = [];
             }
-
 
             $(dataXml).find('config').each(function (i)
             {

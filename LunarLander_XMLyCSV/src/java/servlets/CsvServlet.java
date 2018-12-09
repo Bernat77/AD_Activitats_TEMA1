@@ -35,9 +35,6 @@ public class CsvServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        System.out.println("se ha llegado al servlet");
-
         //Crear objeto File (ponerlo en f)
         ServletContext context = getServletContext();
         String fullPath = context.getRealPath("/conf.csv");
@@ -45,7 +42,6 @@ public class CsvServlet extends HttpServlet {
         File file = new File(fullPath);
         File filexml = new File(xmlPath);
 
-        //parsear el fichero 
         Jaxb jaxb = new Jaxb();
         Configuraciones config = null;
         try {
@@ -61,8 +57,6 @@ public class CsvServlet extends HttpServlet {
             System.out.println("No se pudo guardar en el xml");
         }
 
-        //Pasar a String (Marshall)
-        //marshall object to string xml+
         StringWriter sw = new StringWriter();
         JAXB.marshal(config, sw);
         String xmlString = sw.toString();
